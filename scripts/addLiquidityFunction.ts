@@ -38,7 +38,8 @@ async function main(){
     await DAI_Contract.approve(ROUTER, amountBDesired);
     const deadline = Math.floor(Date.now() / 1000) + (60 * 10);
 
-    //add Liquidity
+    
+    //Add Liquidity Function
     const addLiquidityTx = await ROUTER.addLiquidity(
         USDC,
         DAI,
@@ -74,7 +75,7 @@ async function main(){
     //Approve the router to spend LP tokens
     await PAIR_Contract.approve(ROUTER_ADDRESS, LiquidityAmount);
 
-    //Remove liquidity
+    //Remove Liquidity Function
     const removeLiquidityTx = await ROUTER.removeLiquidity(
         USDC,
         DAI,
